@@ -1,1 +1,30 @@
-RELATÓRIO DE PROJETO: OTIMIZAÇÃO DO FLUXO DE RECUPERAÇÃO DE CRÉDITOData: 02 de Abril de 2026Projeto: Sistema Integrado de Recuperação de Crédito (SIRC)Status: Proposta de Modelagem de Sistemas1. INTRODUÇÃOO presente relatório detalha a proposta de reestruturação do processo de cobrança de títulos. O cenário atual, baseado em procedimentos manuais e sequenciais, apresenta oportunidades de melhoria no que tange à agilidade do contato e à redução de custos operacionais. A solução proposta foca na automação de processos, integração de canais de comunicação e rastreabilidade total do ciclo de vida da dívida.2. ANÁLISE DO FLUXO ATUAL VS. PROPOSTA TECNOLÓGICAA principal mudança estratégica consiste na transição de um modelo reativo para um modelo proativo e multicanal.Substituição de Meios: Transição de cartas físicas para notificações digitais (WhatsApp/E-mail) com validade jurídica.Paralelismo: Atuação simultânea entre notificações automáticas e acionamento do Call Center.Autoatendimento: Implementação de portal para negociações diretas sem intervenção humana.3. MODELAGEM DO PROCESSO (UML)O processo foi mapeado utilizando o Diagrama de Atividades UML. Este mapeamento garante que todas as ramificações de decisão (gateways) estejam previstas, desde a entrada do título até o desfecho final (Pagamento, Protesto ou Devolução).Nota: O diagrama visual encontra-se renderizado no arquivo README.md do repositório, detalhando o paralelismo entre a emissão de notificações e o contato telefônico, além do escalonamento para cobrança externa em caso de ausência de retorno.4. ESPECIFICAÇÃO DE REQUISITOS4.1 Requisitos Funcionais (Principais)Importação e Gestão de Títulos: Centralização de dados para controle de vencimentos.Motor de Notificação: Automação de réguas de cobrança (1ª via, 2ª via e alertas).Módulo de Acordos: Ferramenta para simulação de parcelamentos com aplicação de juros configuráveis.Integração com Cartórios: Módulo para envio automático de títulos para protesto.4.2 Requisitos Não Funcionais (Critérios de Qualidade)Conformidade Legal: Total aderência à LGPD para tratamento de dados sensíveis.Alta Disponibilidade: Sistema operando em regime 24/7 para o Portal do Devedor.Segurança: Criptografia de ponta a ponta em todas as comunicações e transações financeiras.5. REGRAS DE NEGÓCIO ESTABELECIDASPara garantir a integridade do processo, o sistema operará sob as seguintes diretrizes:Imediatismo: A cobrança inicia no momento $T+0$ da inserção do título.Escalonamento por Falha: O cobrador externo só é acionado após a confirmação de silêncio por parte do devedor nos canais digitais e telefônicos.Inviolabilidade do Protesto: Acordos não cumpridos resultam no encaminhamento imediato para protesto, preservando o direito de crédito da contratante.Fluxo de Repasse: Todo valor recuperado deve ser segregado e repassado em até 24h úteis à empresa cliente.6. CONCLUSÃO E RECOMENDAÇÕESA implementação deste projeto resultará em uma redução drástica no tempo médio de recebimento (DSO) e nos custos de postagem física. Recomenda-se a adoção de uma arquitetura de microserviços para garantir a escalabilidade do sistema e a integração via API com os principais birôs de crédito.
+# Relatório de Projeto: Sistema Integrado de Recuperação de Crédito (SIRC)
+
+**Data:** 02 de Abril de 2026  
+**Status:** Proposta de Modelagem e Otimização de Sistemas  
+**Responsável:** [Seu Nome]
+
+---
+
+## 1. Introdução
+Este relatório apresenta a proposta de modernização e automação do fluxo de cobrança de títulos. O objetivo principal é substituir processos manuais e sequenciais por uma abordagem tecnológica integrada, visando reduzir o tempo de recuperação de crédito (DSO) e os custos operacionais com postagens físicas e mão de obra humana.
+
+## 2. Visão Geral da Solução
+A solução proposta, denominada **SIRC**, foca na transição para o modelo **Digital-First**. Em vez de depender exclusivamente de cartas e ligações manuais, o sistema utiliza réguas de cobrança automatizadas e múltiplos canais de contato simultâneos.
+
+### Principais Melhorias:
+* **Comunicação Omnichannel:** Substituição de cartas físicas por notificações via WhatsApp API, E-mail e SMS.
+* **Paralelismo de Ações:** Execução simultânea de notificações e inclusão na fila de discagem do Call Center.
+* **Portal do Devedor:** Ambiente de autoatendimento para negociação e geração de boletos 24/7.
+
+---
+
+## 3. Especificação de Requisitos
+
+### 3.1 Requisitos Funcionais (RF)
+O sistema deve ser capaz de realizar as seguintes funções:
+
+| ID | Requisito | Descrição |
+|:---|:---|:---|
+| **RF01** | Importação de Títulos | Permitir a entrada de dados de dívidas via API ou carga de arquivos CSV/Excel. |
+| **RF02** | Automação de Ré
