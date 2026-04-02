@@ -2,7 +2,8 @@
 
 **Data:** 02 de Abril de 2026  
 **Status:** Proposta de Modelagem e Otimização de Sistemas  
-**Responsável:** [Seu Nome]
+**Responsável:** Calebe Moraes (CC)
+**RA:** 2400974
 
 ---
 
