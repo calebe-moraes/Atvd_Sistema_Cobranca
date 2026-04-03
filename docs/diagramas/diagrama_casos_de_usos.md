@@ -8,5 +8,5 @@ Estes diagramas representam as interações entre os atores e as funcionalidades
 
 Este diagrama apresenta uma visão macro de como todos os atores interagem com os módulos principais do sistema.
 
-<img width="546" height="180" alt="image" src="docs/diagramas/PlantUMLCasosDeUso.png" />
+<img width="546" height="180" alt="image" src="./PlantUMLCasosDeUso.png" />
 
